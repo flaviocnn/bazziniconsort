@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Bazzini consort</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> {% load static %}
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+</head>
+
+<body class="index">
+    <div id="page-wrapper">
+
+       <!-- Header -->
+       <header id="header">
+            <img class="logo" src="{% static "images/logo-small.png" %}">
+            <h1 id="logo">
+                <a href="{% url 'index' %}">Bazzini
+                    <span>Consort</span>
+                </a>
+            </h1>
+            <nav id="nav">
+                <ul>
+                        <li class="home"><a href="{% url 'index' %}">Welcome</a></li>
+                        <li class="about current"><a href="{% url 'about' %}">Chi Siamo</a></li>
+                        <li class="event"><a href="{% url 'events' %}">Eventi</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <article id="main">
+
+            <header class="special container">
+                <h2>La nostra associazione </h2>
+                <p>in questa sezione puoi trovare
+                    <strong> qualche</strong>
+                    informazione su di noi, siamo peggio di quel che sembra ;)
+                </p>
+
+            </header>
+
+            <section class="wrapper style3 container special">
+                {% if members %}
+                <div class="row">
+                    {% for member in members %}
+                    <div class="4u 8u(narrower) -2u(narrower)">
+
+                        <section class="person dissolve-in">
+                            <header>
+                                <h3>{{member.user.get_full_name}}</h3>
+                            </header>
+                            <div class="img_description">
+                                <img src="{{ member.photo.url }}" >
+                            </div>
+                            <p>{{member.role}} </p>
+                            <footer>
+                                <ul class="buttons">
+                                    <li>
+                                        <a href="{% url 'curriculum' member.user_id %}" class="button small">Learn More</a>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </section>
+                    </div>
+                    {% endfor %} {% else %}
+                    <header class="major">
+                        <h2>Tutti licenziati :(</h2>
+                    </header>
+                    {% endif %}
+                </div>
+            </section>
+
+        </article>
+
+<!-- Footer -->
+<footer id="footer">
+        
+                            <ul class="icons">
+                                <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+                                <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+                                <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            </ul>
+        
+                            <ul class="copyright">
+                                <li>&copy; Untitled</li><li>Design: <a href="">FC</a></li>
+                            </ul>
+        
+                        </footer>
+        
+                </div>
+	<!-- Scripts -->
+    <script src= "{% static "assets/js/jquery.min.js" %}"></script>
+    <script src= "{% static "assets/js/jquery.dropotron.min.js" %}"></script>
+    <script src= "{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+    <script src= "{% static "assets/js/jquery.scrollgress.min.js" %}"></script>
+    <script src= "{% static "assets/js/skel.min.js" %}"></script>
+    <script src= "{% static "assets/js/util.js" %}"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src= "{% static "assets/js/main.js" %}"></script>
+
+</body>
+</html>

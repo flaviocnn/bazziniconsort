@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bazzini consort</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <header id="header">
+                    <img class="logo" src="{% static "images/logo-small.png" %}">
+                    <h1 id="logo">
+                        <a href="{% url 'index' %}">Bazzini
+                            <span>Consort</span>
+                        </a>
+                    </h1>
+                    <nav id="nav">
+                        <ul>
+                                <li class="home"><a href="{% url 'index' %}">Welcome</a></li>
+                                <li class="about"><a href="{% url 'about' %}">Chi Siamo</a></li>
+                                <li class="event current"><a href="{% url 'events' %}">Eventi</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+        <!-- Main -->
+        <article id="main">
+            <section class="wrapper style4 container">
+
+                <!-- Content -->
+                <div class="content">
+                    <section>
+                        <a href="#" class="image featured">
+                            <img src="{{event.image_url.url}}" alt="" />
+                        </a>
+                        <header>
+                            <h3>{{ event.name }}</h3>
+                        </header>
+                        <p>{{ event.description }}.</p>
+                    </section>
+                </div>
+
+            </section>
+        </article>
+        <!-- Footer -->
+        <footer id="footer">
+
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon circle fa-twitter">
+                        <span class="label">Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-facebook">
+                        <span class="label">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-google-plus">
+                        <span class="label">Google+</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-github">
+                        <span class="label">Github</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-dribbble">
+                        <span class="label">Dribbble</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design:
+                    <a href="">FC</a>
+                </li>
+            </ul>
+
+        </footer>
+
+    </div>
+
+   <!-- Scripts -->
+			<script src= "{% static "assets/js/jquery.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.dropotron.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.scrollgress.min.js" %}"></script>
+			<script src= "{% static "assets/js/skel.min.js" %}"></script>
+			<script src= "{% static "assets/js/util.js" %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src= "{% static "assets/js/main.js" %}"></script>
+
+</body>
+
+</html>

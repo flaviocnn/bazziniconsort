@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Bazzini consort</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> {% load static %}
+    <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+</head>
+
+<body class="index">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <img class="logo" src="{% static "images/logo-small.png" %}">
+            <h1 id="logo">
+                <a href="{% url 'index' %}">Bazzini
+                    <span>Consort</span>
+                </a>
+            </h1>
+            <nav id="nav">
+                <ul>
+                        <li class="home"><a href="{% url 'index' %}">Welcome</a></li>
+                        <li class="about current"><a href="{% url 'about' %}">Chi Siamo</a></li>
+                        <li class="event"><a href="{% url 'events' %}">Eventi</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <article id="main">
+
+            <!-- One -->
+            <section class="wrapper style4 container">
+
+                <div class="row 150%">
+                    <div class="5u 12u(narrower)">
+
+                        <!-- Content -->
+                        <div class="content">
+                            <section>
+                                <header>
+                                    <h2>{{ user.get_full_name }}</h2>
+                                </header>
+                                <a href="#" class="image featured zoom">
+                                    <img src="{{ user.profile.photo.url }}" alt="" />
+                                </a>
+                                <header>
+                                    <h3>Informazioni</h3>
+                                    <ul style="list-style-type:disc; padding-left:20px;">
+                                        <li>Nome: {{ user.first_name }}</li>
+                                        <li>Cognome: {{ user.last_name }} </li>
+                                        <li>Data di nascita: {{ user.profile.birth_date }}</li>
+                                        <li>Vive a: {{ user.profile.location }}</li>
+                                        <li>Incarico: {{ user.profile.role }}</li>
+                                        <li>Email: {{ user.email }}</li>
+                                        <li>Telefono: {{ user.profile.mobile }}</li>
+                                    </ul>
+                                </header>
+
+                            </section>
+                        </div>
+
+                    </div>
+
+                    <div class="5u 12u(narrower)">
+
+                        <!-- Content -->
+                        <div class="content dissolve-in">
+                            <section>
+                                <header>
+                                    <h2>Curriculum vitae</h2>
+                                </header>
+                                <p>{{ user.profile.bio }}</p>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two -->
+            <section class="wrapper style1 container special">
+                <div class="row">
+                    <div class="4u 12u(narrower)">
+
+                        <section>
+                            <header>
+                                <h3>This is Something</h3>
+                            </header>
+                            <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor
+                                nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+                            <footer>
+                                <ul class="buttons">
+                                    <li>
+                                        <a href="#" class="button small">Learn More</a>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </section>
+
+                    </div>
+                    <div class="4u 12u(narrower)">
+
+                        <section>
+                            <header>
+                                <h3>Also Something</h3>
+                            </header>
+                            <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor
+                                nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+                            <footer>
+                                <ul class="buttons">
+                                    <li>
+                                        <a href="#" class="button small">Learn More</a>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </section>
+
+                    </div>
+                    <div class="4u 12u(narrower)">
+
+                        <section>
+                            <header>
+                                <h3>Probably Something</h3>
+                            </header>
+                            <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor
+                                nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+                            <footer>
+                                <ul class="buttons">
+                                    <li>
+                                        <a href="#" class="button small">Learn More</a>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <!-- Footer -->
+        <footer id="footer">
+
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon circle fa-twitter">
+                        <span class="label">Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-facebook">
+                        <span class="label">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-google-plus">
+                        <span class="label">Google+</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-github">
+                        <span class="label">Github</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon circle fa-dribbble">
+                        <span class="label">Dribbble</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design:
+                    <a href="">FC</a>
+                </li>
+            </ul>
+
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.dropotron.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrollgress.min.js" %}"></script>
+    <script src="{% static "assets/js/skel.min.js" %}"></script>
+    <script src="{% static "assets/js/util.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+
+</body>
+
+</html>

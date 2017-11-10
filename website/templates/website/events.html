@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bazzini consort</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<img class="logo" src="{% static "images/logo-small.png" %}">
+					<h1 id="logo"><a href="{% url 'index' %}">Bazzini<span>Consort</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="home"><a href="{% url 'index' %}">Welcome</a></li>
+							<li class="about"><a href="{% url 'about' %}">Chi Siamo</a></li>
+							<li class="event current"><a href="{% url 'events' %}">Eventi</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<h2>Bazzini Consort e' un'associazione <strong>a scopo di lucro</strong> <br/>
+						fondata nel 2017 da 4 studenti del conservatorio di Brescia</h2>
+						<p>Il nostro scopo e' quello di ottenere <strong>soldi</strong> sfruttando la musica
+						<br />
+						e una politica aggressiva di clickbait <strong> lol</strong>,
+						<br />
+						scrivete altre cose <a href=""></a>Have fun!</p>
+					</header>
+
+					<!-- Three -->
+					
+						<section class="wrapper style3 container special">
+						{% if event_list %}
+							<header class="major">
+								<h2>Guarda i nostri <strong>eventi fighi</strong></h2>
+							</header>
+
+							<div class="row">
+								{% for event in event_list %}
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="{% url 'event' event.id %}" class="image featured"><img src="{{event.image_url.url}}" alt="" /></a>
+										<header>
+											<h3>{{ event.name }}</h3>
+										</header>
+										<p>{{ event.description }}.</p>
+									</section>
+
+								</div>
+								{% endfor %}
+							</div>
+
+							
+						{% else %}
+							<header class="major">
+								<h2>Nessun evento in programma :(</h2>
+							</header>
+						{% endif %}
+						</section>
+
+				</article>
+                <section id="cta">
+                                            <header>
+                                                <h2>Vuoi un posto riservato per il nostro prossimo evento?</h2>
+                                                <p>Diventa subito socio!</p>
+                                            </header>
+                                            <footer>
+                                                <ul class="buttons">
+                                                    <li><a href="#" class="button special">Registrati</a></li>
+                                                </ul>
+                                            </footer>
+                        
+                                        </section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="">FC</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src= "{% static "assets/js/jquery.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.dropotron.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+			<script src= "{% static "assets/js/jquery.scrollgress.min.js" %}"></script>
+			<script src= "{% static "assets/js/skel.min.js" %}"></script>
+			<script src= "{% static "assets/js/util.js" %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src= "{% static "assets/js/main.js" %}"></script>
+
+	</body>
+</html>
