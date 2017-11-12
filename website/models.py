@@ -12,6 +12,8 @@ class Profile(models.Model):
     role = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     photo = models.ImageField(upload_to='images/profiles', default='images/profiles/empty.jpg')
+    def __str__(self):
+            return self.user.first_name
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
