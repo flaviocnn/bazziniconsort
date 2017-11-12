@@ -44,7 +44,7 @@ DATABASES = {
     )
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bazziniconsort.herokuapp.com',]
 
 
 # Application definition
